@@ -19,7 +19,7 @@ dependencies {
 sonarqube {
     properties {
         property 'sonar.login', 'admin'
-        property 'sonar.password', 'admin'
+        property 'sonar.password', property('sonarPassword')
     }
 }
 
