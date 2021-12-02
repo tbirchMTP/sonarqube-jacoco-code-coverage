@@ -8,8 +8,6 @@ plugins {
 group 'com.tom'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
@@ -20,7 +18,8 @@ dependencies {
 
 sonarqube {
     properties {
-        property 'sonar.host.url', 'http://localhost:9000'
+        property 'sonar.login', 'admin'
+        property 'sonar.password', 'admin'
     }
 }
 
@@ -31,5 +30,5 @@ jacocoTestReport {
 }
 test.finalizedBy jacocoTestReport
 tasks.named('sonarqube').configure {
-  dependsOn test
+    dependsOn test
 }
